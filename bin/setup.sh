@@ -60,7 +60,7 @@ if [[ ! -d /srv/releases ]]; then
     sudo chmod 760 /srv/releases
 fi
 
-sudo su devopslead -c 'touch /srv/releases/release_notes.txt && chmod 600 /srv/releases/release_notes.txt'
+sudo su devopslead -c 'touch /srv/releases/release_notes.txt && chmod 600 /srv/releases/release_notes.txt && chgrp release_team /srv/releases/release_notes.txt'
 
 # Access log file
 if [[ ! -f /var/log/access_attempts.log ]]; then
